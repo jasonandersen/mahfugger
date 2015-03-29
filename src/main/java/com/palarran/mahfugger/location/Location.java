@@ -1,9 +1,9 @@
-package com.palarran.mahfugger;
+package com.palarran.mahfugger.location;
 
 /**
  * Represents coordinates of a geophysical location. This is an immutable object.
  */
-public class GeoLocation {
+public class Location {
 
     private final Float latitude;
 
@@ -14,7 +14,7 @@ public class GeoLocation {
      * @param latitude
      * @param longitude
      */
-    public GeoLocation(Float latitude, Float longitude) {
+    public Location(Float latitude, Float longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
     }
@@ -69,7 +69,7 @@ public class GeoLocation {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        GeoLocation other = (GeoLocation) obj;
+        Location other = (Location) obj;
         if (latitude == null) {
             if (other.latitude != null) {
                 return false;

@@ -3,7 +3,7 @@ package com.palarran.mahfugger.excercise02;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
-import com.palarran.mahfugger.GeoLocation;
+import com.palarran.mahfugger.location.Location;
 
 /**
  * This is a simple JUnit test to demonstrate how to do logging using log4j, the more
@@ -77,7 +77,7 @@ public class SimpleLoggingTest {
 
     @Test
     public void testLogObject() {
-        GeoLocation walkerGroup = new GeoLocation(50.898659f, -127.531532f);
+        Location walkerGroup = new Location(50.898659f, -127.531532f);
         /*
          * What happens when you log an object instead of just a string?
          */

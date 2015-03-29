@@ -1,4 +1,4 @@
-package com.palarran.mahfugger.excercise04;
+package com.palarran.mahfugger.excercise51;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -14,7 +14,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.palarran.mahfugger.GeoLocation;
+import com.palarran.mahfugger.location.Location;
 
 /**
  * Parse different attributes of a Craiglist ad.
@@ -113,11 +113,11 @@ public class ParseCraigslistAdTest {
 
     @Test
     public void testLocation() {
-        GeoLocation expectedLocation = new GeoLocation(47.1991f, -122.3151f);
-        GeoLocation actualLocation = null;
+        Location expectedLocation = new Location(47.1991f, -122.3151f);
+        Location actualLocation = null;
 
         /*
-         * FIXME - find the latitude and longitude of this Craigslist ad
+         * FIXME - find the latitude and longitude of this Craigslist ad and store in actualLocation
          */
 
         log.debug(actualLocation);
