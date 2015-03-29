@@ -1,4 +1,4 @@
-package com.palarran.mahfugger.excercise51;
+package com.palarran.mahfugger.exercise51;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

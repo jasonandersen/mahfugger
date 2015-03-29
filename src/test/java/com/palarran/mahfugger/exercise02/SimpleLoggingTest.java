@@ -1,4 +1,4 @@
-package com.palarran.mahfugger.excercise02;
+package com.palarran.mahfugger.exercise02;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;

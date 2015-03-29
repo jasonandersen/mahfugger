@@ -1,4 +1,4 @@
-package com.palarran.mahfugger.excercise01;
+package com.palarran.mahfugger.exercise01;
 
 /**
  * 
