@@ -1,4 +1,4 @@
-package com.palarran.mahfugger.excercise01;
+package com.palarran.mahfugger.excercise02;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,10 +11,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
- * This is a typical JUnit test class. In this class, we will open up a web
+ * This is a typical Selenium test class. In this class, we will open up a web
  * browser and read some simple data off the web page via the browser.
  */
-public class Excercise01Test {
+public class SimpleSeleniumTest {
 
     /**
      * The WebDriver class represents an idealized web browser. This object
@@ -23,13 +23,6 @@ public class Excercise01Test {
      */
     private WebDriver driver;
 
-    /**
-     * The @Before annotation in a JUnit test is used to annotate a method that
-     * you want to run before each test. Use this annotation to create setup 
-     * methods that setup the environment for each of your tests to run. In this
-     * example, we want to create an instance of the Firefox browser and make it
-     * load a web page from the local drive.
-     */
     @Before
     public void setup() {
         /*
@@ -45,21 +38,16 @@ public class Excercise01Test {
         driver.get("file://localhost/Users/jason/dev/workspace/mahfugger/src/test/resources/craigslist/ads/4836761369/index.html");
     }
 
-    /**
-     * The @After annotation in a JUnit test is used to annotate a method that 
-     * you want to run after each test. Use this annotation to tear down the 
-     * environment after your test is complete. In this example, we want to make
-     * sure the instance of the Firefox browser we created for the test gets shut 
-     * down.
-     */
     @After
     public void tearDown() {
+        /*
+         * This will shut down the Firefox instance after each test.
+         */
         driver.quit();
     }
 
     /**
-     * The @Test annotation indicates a method that is an actual test. Use static
-     * assert methods from JUnit's org.junit.Assert class to perform the actual
+     * Use static assert methods from JUnit's org.junit.Assert class to perform the actual
      * test assertions.
      */
     @Test
