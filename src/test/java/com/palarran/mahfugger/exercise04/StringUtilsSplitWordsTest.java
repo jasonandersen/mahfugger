@@ -11,7 +11,7 @@ import com.palarran.mahfugger.util.StringUtils;
 /**
  * Test the ability to decompose a string down into words.
  */
-public class StringUtilsDecomposeIntoWordsTest {
+public class StringUtilsSplitWordsTest {
 
     private String paragraph;
 
@@ -27,7 +27,7 @@ public class StringUtilsDecomposeIntoWordsTest {
     public void test1() {
         paragraph = "I like monkeys.";
         expectedWords = new String[] { "I", "like", "monkeys" };
-        actualWords = StringUtils.decomposeIntoWords(paragraph);
+        actualWords = StringUtils.splitWords(paragraph);
         assertArrayEquals(expectedWords, actualWords.toArray());
     }
 
@@ -35,7 +35,7 @@ public class StringUtilsDecomposeIntoWordsTest {
     public void test2() {
         paragraph = "HOLY SHIT - I REALLY like monkeys!!!!";
         expectedWords = new String[] { "HOLY", "SHIT", "I", "REALLY", "like", "monkeys" };
-        actualWords = StringUtils.decomposeIntoWords(paragraph);
+        actualWords = StringUtils.splitWords(paragraph);
         assertArrayEquals(expectedWords, actualWords.toArray());
     }
 
@@ -43,7 +43,7 @@ public class StringUtilsDecomposeIntoWordsTest {
     public void testEmptyString() {
         paragraph = "";
         expectedWords = new String[] {};
-        actualWords = StringUtils.decomposeIntoWords(paragraph);
+        actualWords = StringUtils.splitWords(paragraph);
         assertArrayEquals(expectedWords, actualWords.toArray());
     }
 
@@ -56,7 +56,7 @@ public class StringUtilsDecomposeIntoWordsTest {
      */
     @Test(expected = IllegalArgumentException.class)
     public void testNullArgument() {
-        StringUtils.decomposeIntoWords(null);
+        StringUtils.splitWords(null);
     }
 
 }

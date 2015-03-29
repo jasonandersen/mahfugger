@@ -34,7 +34,7 @@ public class StringUtils {
      *      returned list.
      * @throws IllegalArgumentException if paragraph is null
      */
-    public static List<String> decomposeIntoWords(String paragraph) {
+    public static List<String> splitWords(String paragraph) {
         throw new UnsupportedOperationException("not implemented yet");
     }
 
