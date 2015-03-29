@@ -1,5 +1,9 @@
 package com.palarran.mahfugger.excercise01;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -48,6 +52,13 @@ public class SimpleJUnitTest {
 
         message = "I like monkeys.";
         System.out.println("message = " + message);
+
+        /*
+         * Use assertion methods from JUnit's Assert class to perform tests.
+         */
+        assertEquals("I like monkeys.", message);
+        assertTrue(message.length() >= 13);
+        assertFalse(message.startsWith("poo"));
     }
 
     @Test

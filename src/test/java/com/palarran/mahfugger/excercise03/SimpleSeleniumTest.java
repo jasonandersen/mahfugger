@@ -79,10 +79,45 @@ public class SimpleSeleniumTest {
         /*
          * FIXME - Write some code here that will find the text of the <title> element on the web page and
          * store it in the pageTitle variable. 
-         * 
-         * HINT: read through the methods and Javadoc in the WebDriver class.
          */
         assertEquals("1998 Alpenlite M-31-RL Augusta 5th Wheel", pageTitle);
     }
+
+    /*
+     * ****** SPOILER ALERT - ONLY READ BELOW IF YOU'RE STUCK *******
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * testPageTitle()
+     * ---------------
+     * Read through the methods and Javadoc in the WebDriver class.
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     */
 
 }

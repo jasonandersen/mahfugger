@@ -79,7 +79,7 @@ public class SimpleLoggingTest {
     public void testLogObject() {
         GeoLocation walkerGroup = new GeoLocation(50.898659f, -127.531532f);
         /*
-         * What happens when we log an object instead of just a string?
+         * What happens when you log an object instead of just a string?
          */
         log.debug(walkerGroup);
     }
