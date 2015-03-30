@@ -13,7 +13,8 @@ public class StringUtils {
     private StringUtils() {
         /*
          * This is a private constructor. By making the constructor private, that prevents anyone
-         * from instantiating this class. This class will be comprised of static methods only.
+         * from instantiating this class. This class will be comprised of static methods only and
+         * therefore would not make sense to instantiate.
          */
     }
 
@@ -35,6 +36,16 @@ public class StringUtils {
      * @throws IllegalArgumentException if paragraph is null
      */
     public static List<String> splitWords(String paragraph) {
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+
+    /**
+     * @param paragraph
+     * @return a list of unique words (regardless of case) contained in paragraph in ascending alphabetical order. No
+     *      punctuation or whitespace should be included in the returned list.
+     * @throws IllegalArgumentException if paragraph is null
+     */
+    public static List<String> splitWordsAlphabetically(String paragraph) {
         throw new UnsupportedOperationException("not implemented yet");
     }
 
