@@ -47,3 +47,36 @@ public class StringUtilsSplitWordsAlphabeticallyTest {
         assertArrayEquals(expectedWords, actualWords.toArray());
     }
 }
+
+/*
+ * ****** SPOILER ALERT - ONLY READ BELOW IF YOU'RE STUCK *******
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * splitWordsAlphabetically()
+ * --------------------------
+ * For uniqueness, look at implementations of the Set interface.
+ * 
+ * For the sorting, you can either try Collections.sort() or use a SortedSet.
+ * 
+ */
