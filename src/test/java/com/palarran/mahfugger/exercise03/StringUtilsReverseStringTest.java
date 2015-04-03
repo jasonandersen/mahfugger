@@ -62,7 +62,7 @@ public class StringUtilsReverseStringTest {
          * and find out what happens.
          */
         try {
-            StringUtils.reverse(null); //<-- uh oh
+            StringUtils.reverse(null); //<-- oh shit
             /*
              * If we call the reverse() method with a null value, we should never be able to reach
              * this next line of code. If we did, then this test fails because an exception was not 

@@ -101,14 +101,14 @@ public class ParseCraigslistAdTest {
 
     @Test
     public void testPrice() {
-        String adPrice = "";
+        Integer adPrice = null;
 
         /*
          * FIXME - parse the price for this ad
          */
 
         log.debug("adPrice = " + adPrice);
-        assertEquals("$10500", adPrice);
+        assertEquals(new Integer(10500), adPrice);
     }
 
     @Test

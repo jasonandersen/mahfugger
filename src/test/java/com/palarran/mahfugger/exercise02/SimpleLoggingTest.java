@@ -3,8 +3,6 @@ package com.palarran.mahfugger.exercise02;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
-import com.palarran.mahfugger.location.Location;
-
 /**
  * This is a simple JUnit test to demonstrate how to do logging using log4j, the more
  * popular Java logging framework. There are several logging frameworks (and framework
@@ -75,15 +73,6 @@ public class SimpleLoggingTest {
         log.debug("Meh, just some normal debugging going on here.");
     }
 
-    @Test
-    public void testLogObject() {
-        Location walkerGroup = new Location(50.898659f, -127.531532f);
-        /*
-         * What happens when you log an object instead of just a string?
-         */
-        log.debug(walkerGroup);
-    }
-
     /*
      * ****** SPOILER ALERT - ONLY READ BELOW IF YOU'RE STUCK *******
      * 
@@ -113,20 +102,6 @@ public class SimpleLoggingTest {
      * ---------------------
      * Look at the log4j.properties file. The setting for log4j.logger.com.palarran.mahfugger.excercise02.SimpleLoggingTest
      * is higher than DEBUG and therefore DEBUG messages will be ignored until the setting is lowered.
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * testLogObject()
-     * ---------------
-     * Look at the GeoLocation class and the toString() method. That method is called to return a string
-     * representation of the instance. Look at the Javadocs for the String class and the format() method
-     * to learn more about how I formatted that string.
      */
 
 }
