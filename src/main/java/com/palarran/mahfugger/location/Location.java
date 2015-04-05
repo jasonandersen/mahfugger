@@ -35,4 +35,14 @@ public class Location {
         return longitude;
     }
 
+    /**
+     * Calculate the shortest distance along the Earth's surface (ignoring altitude) between two
+     * locations.
+     * @param that the other location to calculate distance to
+     * @return a number in meters representing the distance between the two points
+     */
+    public Float distanceTo(Location that) {
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+
 }
