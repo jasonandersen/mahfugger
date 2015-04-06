@@ -75,7 +75,9 @@ public class LocationToStringTest {
      * HINT: override toString() in the Location class. Right now the Location class is inheriting the
      * toString() method from the Object class.
      * 
-     * 
+     * HINT: see the Javadocs for the java.util.Formatter class. Also look up printf() formatting in Evernote.
+     * You really don't ever want to build dynamic strings by just concatenating them together "a" + "b", ect.
+     * Use printf() style formatting to do that.
      * 
      * 
      * 
