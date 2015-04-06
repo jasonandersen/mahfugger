@@ -1,0 +1,1 @@
+This is a project intended to help learn Java and object oriented programming. Start down in src/test/com/palarran/mahfugger and work through each exercise package in order. The exercises build on each other so the intention is to start at exercise01 and move through them in order.
