@@ -1,7 +1,8 @@
 package com.palarran.mahfugger.location;
 
 /**
- * Represents coordinates of a geophysical location. This is an immutable object.
+ * Represents two-dimensional coordinates of a geophysical location. 
+ * This is an immutable object.
  */
 public class Location {
 
