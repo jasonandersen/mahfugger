@@ -41,6 +41,10 @@ public class LocationEqualityTest {
          * considered equal.
          */
         assertTrue(locationA.equals(locationB));
+        /*
+         * Java equals() methods must be transitive. In other words, if a == b, then b == a.
+         */
+        assertTrue(locationB.equals(locationA));
     }
 
     @Test
@@ -52,6 +56,7 @@ public class LocationEqualityTest {
          * considered inequal.
          */
         assertFalse(locationA.equals(locationB));
+        assertFalse(locationB.equals(locationA));
     }
 
     @Test
