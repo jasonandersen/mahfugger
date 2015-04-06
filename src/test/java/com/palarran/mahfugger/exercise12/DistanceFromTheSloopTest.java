@@ -19,13 +19,13 @@ public class DistanceFromTheSloopTest {
 
     @Test
     public void test1() {
-        target = new Location(51f, -128f);
+        target = new Location(51.0, -128.0);
         assertEquals(549439.3, target.distanceFromTheSloop(), 100);
     }
 
     @Test
     public void test2() {
-        target = new Location(-51f, -128f);
+        target = new Location(-51.0, -128.0);
         assertEquals(10984530.3, target.distanceFromTheSloop(), 100);
     }
 

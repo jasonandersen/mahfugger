@@ -8,18 +8,18 @@ public class Location {
     /**
      * Static constant representing the location of the Sloop Tavern.
      */
-    private final static Location THE_SLOOP = new Location(47.668772f, -122.394300f);
+    private final static Location THE_SLOOP = new Location(47.668772, -122.394300);
 
-    private final Float latitude;
+    private final Double latitude;
 
-    private final Float longitude;
+    private final Double longitude;
 
     /**
      * Constructor.
      * @param latitude
      * @param longitude
      */
-    public Location(Float latitude, Float longitude) {
+    public Location(Double latitude, Double longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
     }
@@ -28,7 +28,7 @@ public class Location {
      * @return the latitude of the location, positive latitudes in the northern hemisphere and 
      *      negative latitudes in the southern hemisphere
      */
-    public Float getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
@@ -36,7 +36,7 @@ public class Location {
      * @return the longitude of the location, positive longitudes in the eastern hemisphere and
      *      negative longitudes in the western hemisphere
      */
-    public Float getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 

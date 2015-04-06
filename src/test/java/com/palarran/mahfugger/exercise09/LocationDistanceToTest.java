@@ -25,7 +25,7 @@ public class LocationDistanceToTest {
 
     @Before
     public void setup() {
-        seattle = new Location(48f, -123f);
+        seattle = new Location(48.0, -123.0);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -39,13 +39,13 @@ public class LocationDistanceToTest {
 
     @Test
     public void test1() {
-        testLocation = new Location(50f, -126f);
+        testLocation = new Location(50.0, -126.0);
         assertEquals(311965.9, seattle.distanceTo(testLocation), 0.1);
     }
 
     @Test
     public void test2() {
-        testLocation = new Location(50f, 126f);
+        testLocation = new Location(50.0, 126.0);
         assertEquals(7280106.2, seattle.distanceTo(testLocation), 0.1);
     }
 }

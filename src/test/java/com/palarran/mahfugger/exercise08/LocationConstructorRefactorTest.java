@@ -29,14 +29,14 @@ public class LocationConstructorRefactorTest {
     @Test
     public void testNullLatitude() {
         try {
-            location = new Location(null, 50f);
+            location = new Location(null, 50.0);
             fail("No exception was thrown when a null latitude was passed in.");
         } catch (InvalidCoordinatesException e) {
             /*
              * Let's make sure the exception is populated as expected.
              */
             assertNull(e.getLatitude());
-            assertEquals(50f, e.getLongitude(), 0.00001);
+            assertEquals(50.0, e.getLongitude(), 0.00001);
             assertEquals(e.getMessage(), "A location's latitude cannot be null.");
         } catch (Exception e) {
             /*
@@ -50,7 +50,7 @@ public class LocationConstructorRefactorTest {
     @Test
     public void testNullLongitude() {
         try {
-            location = new Location(25f, null);
+            location = new Location(25.0, null);
             fail("No exception was thrown when a null longitude was passed in.");
         } catch (InvalidCoordinatesException e) {
             assertNull(e.getLongitude());
@@ -65,7 +65,7 @@ public class LocationConstructorRefactorTest {
     @Test
     public void testLatitudeTooLarge() {
         try {
-            location = new Location(90.1f, 50f);
+            location = new Location(90.1, 50.0);
             fail("No exception was thrown when a latitude was passed in that was too large.");
         } catch (InvalidCoordinatesException e) {
             assertEquals(90.1f, e.getLatitude(), 0.00001);
@@ -81,7 +81,7 @@ public class LocationConstructorRefactorTest {
     @Test
     public void testLatitudeTooSmall() {
         try {
-            location = new Location(-90.1f, 50f);
+            location = new Location(-90.1, 50.0);
             fail("No exception was thrown when a latitude was passed in that was too small.");
         } catch (InvalidCoordinatesException e) {
             assertEquals(-90.1f, e.getLatitude(), 0.00001);
@@ -97,7 +97,7 @@ public class LocationConstructorRefactorTest {
     @Test
     public void testLongtideTooLarge() {
         try {
-            location = new Location(25f, 180.1f);
+            location = new Location(25.0, 180.1);
             fail("No exception was thrown when a longitude was passed in that was too large.");
         } catch (InvalidCoordinatesException e) {
             assertEquals(180.1f, e.getLongitude(), 0.00001);
@@ -113,7 +113,7 @@ public class LocationConstructorRefactorTest {
     @Test
     public void testLongtideTooSmall() {
         try {
-            location = new Location(25f, -180.1f);
+            location = new Location(25.0, -180.1);
             fail("No exception was thrown when a longitude was passed in that was too small.");
         } catch (InvalidCoordinatesException e) {
             assertEquals(-180.1f, e.getLongitude(), 0.00001);

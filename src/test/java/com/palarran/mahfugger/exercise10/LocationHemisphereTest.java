@@ -21,14 +21,14 @@ public class LocationHemisphereTest {
 
     @Test
     public void testNorthWest() {
-        target = new Location(50f, -100f);
+        target = new Location(50.0, -100.0);
         assertEquals(LatitudinalHemisphere.NORTHERN, target.getLatitudinalHemisphere());
         assertEquals(LongitudinalHemisphere.WESTERN, target.getLongitudinalHemisphere());
     }
 
     @Test
     public void testNorthEast() {
-        target = new Location(50f, 100f);
+        target = new Location(50.0, 100.0);
         assertEquals(LatitudinalHemisphere.NORTHERN, target.getLatitudinalHemisphere());
         assertEquals(LongitudinalHemisphere.EASTERN, target.getLongitudinalHemisphere());
 
@@ -36,14 +36,14 @@ public class LocationHemisphereTest {
 
     @Test
     public void testSouthWest() {
-        target = new Location(-50f, -100f);
+        target = new Location(-50.0, -100.0);
         assertEquals(LatitudinalHemisphere.SOUTHERN, target.getLatitudinalHemisphere());
         assertEquals(LongitudinalHemisphere.WESTERN, target.getLongitudinalHemisphere());
     }
 
     @Test
     public void testSouthEast() {
-        target = new Location(-50f, 100f);
+        target = new Location(-50.0, 100.0);
         assertEquals(LatitudinalHemisphere.SOUTHERN, target.getLatitudinalHemisphere());
         assertEquals(LongitudinalHemisphere.EASTERN, target.getLongitudinalHemisphere());
 

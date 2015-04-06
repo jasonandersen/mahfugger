@@ -20,9 +20,9 @@ public class LocationConstructorTest {
 
     @Test
     public void testValidConstructorValues() {
-        location = new Location(25f, 50f);
-        assertEquals(25f, location.getLatitude(), 0.000001);
-        assertEquals(50f, location.getLongitude(), 0.000001);
+        location = new Location(25.0, 50.0);
+        assertEquals(25.0, location.getLatitude(), 0.000001);
+        assertEquals(50.0, location.getLongitude(), 0.000001);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -30,7 +30,7 @@ public class LocationConstructorTest {
         /*
          * A null latitude doesn't make sense. Should throw an IllegalArgumentException.
          */
-        location = new Location(null, 50f);
+        location = new Location(null, 50.0);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -38,7 +38,7 @@ public class LocationConstructorTest {
         /*
          * A null longitude doesn't make sense. Should throw an IllegalArgumentException.
          */
-        location = new Location(25f, null);
+        location = new Location(25.0, null);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -46,7 +46,7 @@ public class LocationConstructorTest {
         /*
          * A latitude of 91 degrees doesn't make sense. Should throw an IllegalArgumentException.
          */
-        location = new Location(91f, 50f);
+        location = new Location(91.0, 50.0);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -54,7 +54,7 @@ public class LocationConstructorTest {
         /*
          * A longitude of 181 degrees doesn't make sense. Should throw an IllegalArgumentException.
          */
-        location = new Location(25f, 181f);
+        location = new Location(25.0, 181.0);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -62,7 +62,7 @@ public class LocationConstructorTest {
         /*
          * A latitude of -91 degrees doesn't make sense. Should throw an IllegalArgumentException.
          */
-        location = new Location(-91f, 50f);
+        location = new Location(-91.0, 50.0);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -70,7 +70,7 @@ public class LocationConstructorTest {
         /*
          * A longitude of -181 degrees doesn't make sense. Should throw an IllegalArgumentException.
          */
-        location = new Location(25f, -181f);
+        location = new Location(25.0, -181.0);
     }
 
 }

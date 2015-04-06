@@ -113,7 +113,7 @@ public class ParseCraigslistAdTest {
 
     @Test
     public void testLocation() {
-        Location expectedLocation = new Location(47.1991f, -122.3151f);
+        Location expectedLocation = new Location(47.1991, -122.3151);
         Location actualLocation = null;
 
         /*
