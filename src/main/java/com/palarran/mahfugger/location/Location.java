@@ -29,14 +29,14 @@ public class Location {
 
     /**
      * @return the longitude of the location, positive longitudes in the eastern hemisphere and
-     *      negative latitudes in the western hemisphere
+     *      negative longitudes in the western hemisphere
      */
     public Float getLongitude() {
         return longitude;
     }
 
     /**
-     * Calculate the shortest distance along the Earth's surface (ignoring altitude) between two
+     * Calculates the shortest distance along the Earth's surface (ignoring altitude) between two
      * locations.
      * @param that the other location to calculate distance to
      * @return a number in meters representing the distance between the two points
