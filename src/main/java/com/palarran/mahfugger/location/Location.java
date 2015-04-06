@@ -5,6 +5,11 @@ package com.palarran.mahfugger.location;
  */
 public class Location {
 
+    /**
+     * Static constant representing the location of the Sloop Tavern.
+     */
+    private final static Location THE_SLOOP = new Location(47.668772f, -122.394300f);
+
     private final Float latitude;
 
     private final Float longitude;
@@ -41,7 +46,7 @@ public class Location {
      * @param that the other location to calculate distance to
      * @return a number in meters representing the distance between the two points
      */
-    public Float distanceTo(Location that) {
+    public Double distanceTo(Location that) {
         throw new UnsupportedOperationException("not implemented yet");
     }
 
@@ -58,6 +63,15 @@ public class Location {
      * @return an enum indicating which hemisphere this location is in.
      */
     public LongitudinalHemisphere getLongitudinalHemisphere() {
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+
+    /**
+     * Calculates the shortest distance along the Earth's surface (ignoring altitude) between
+     * this location and the location of the Sloop Tavern in Ballard, WA.
+     * @return distance in meters
+     */
+    public Double distanceFromTheSloop() {
         throw new UnsupportedOperationException("not implemented yet");
     }
 
