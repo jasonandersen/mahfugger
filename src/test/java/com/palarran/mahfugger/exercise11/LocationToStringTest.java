@@ -29,7 +29,7 @@ public class LocationToStringTest {
     @Test
     public void test2() {
         location = new Location(47.0, -123.0);
-        assertEquals("47° N 123 W", location.toString());
+        assertEquals("47° N 123° W", location.toString());
     }
 
     /*

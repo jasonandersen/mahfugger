@@ -14,6 +14,15 @@ import com.palarran.mahfugger.location.LongitudinalHemisphere;
 public class LocationHemisphereTest {
 
     /*
+     * I'm using enums to indicate which hemisphere the latitude is in and which hemisphere
+     * the longitude is in. Enums (short for enumerated value) is the best way to handle a
+     * value that can be only one of a finite list of values. In this instance, a latitudinal
+     * hemisphere can only be either NORTHERN or SOUTHERN. If we use a String to hold that value
+     * with "N" and "S" as expected values, there's nothing to say some assknuckle couldn't 
+     * come along and store "FU" in there instead. Using an enum restricts us to just valid
+     * values. Whenever you're faced with a data type with a finite list of values, make an
+     * enum. Trust me, you'll be happier that you did.
+     * 
      * FIXME - make these tests pass!
      */
 

@@ -21,6 +21,8 @@ public class AltitudeAwareLocationEqualityTest {
      * and hashCode() from Location. Those don't accurately represent equality for
      * this class since we added a third data element - altitude - that should be 
      * considered as part of equality.
+     * 
+     * FIXME - make these tests pass!
      */
 
     private AltitudeAwareLocation locationA;
