@@ -17,7 +17,7 @@ public class TrackPointToStringTest {
     /*
      * TrackPoint inherits from Location which means right now, its toString() method is being inherited
      * from the Location class. Since we added a timestamp property to the class, override the toString()
-     * method in TrackPoint to properly reflect the toStringValue we want.
+     * method in TrackPoint to properly reflect the toString value we want.
      * 
      * FIXME - make these tests pass
      */
@@ -28,14 +28,14 @@ public class TrackPointToStringTest {
     public void test1() {
         ZonedDateTime timestamp = ZonedDateTime.of(2015, 4, 1, 12, 0, 0, 0, ZoneId.of("America/Los_Angeles"));
         location = new TrackPoint(47.89234, -123.456, timestamp);
-        assertEquals("4/1/2015 12:00:00PM PST 47° 53' 32.424\" N 123° 27' 21.6\" W", location.toString());
+        assertEquals("4/1/2015 12:00:00PM PST 47° 53' 32.424\"N 123° 27' 21.6\"W", location.toString());
     }
 
     @Test
     public void test2() {
         ZonedDateTime timestamp = ZonedDateTime.of(2015, 4, 1, 12, 0, 0, 0, ZoneId.of("America/Los_Angeles"));
         location = new TrackPoint(47.0, -123.0, timestamp);
-        assertEquals("4/1/2015 12:00:00PM PST 47° N 123 W", location.toString());
+        assertEquals("4/1/2015 12:00:00PM PST 47°N 123W", location.toString());
     }
 
     /*
