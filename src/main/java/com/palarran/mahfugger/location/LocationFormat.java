@@ -32,6 +32,11 @@ public enum LocationFormat {
         }
     };
 
+    /*
+     * The following abstract method tells Java that each enumeration instance must
+     * provide its own implementation of the format(Location) method.
+     */
+
     /**
      * Formats the location based on the specified format.
      * @param location

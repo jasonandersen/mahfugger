@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import com.palarran.mahfugger.location.Location;
@@ -29,7 +30,12 @@ public class LocationFormatTest {
 
     private LocationFormat format;
 
-    private Location location = new Location(47.89234, -123.456);
+    private Location location;
+
+    @Before
+    public void setup() {
+        location = new Location(47.89234, -123.456);
+    }
 
     @Test
     public void testDegMinSec() {
@@ -51,6 +57,9 @@ public class LocationFormatTest {
 
     @Test
     public void testTrackPointFormat() {
+        /*
+         * Let's see what happens when we try to pass in a TrackPoint to the LocationFormat.format() method.
+         */
         ZoneId zone = ZoneId.of("America/Los_Angeles");
         TrackPoint point = new TrackPoint(47.89234, -123.456, ZonedDateTime.of(2015, 4, 1, 12, 0, 0, 0, zone));
         format = LocationFormat.DEGREES_MINS_SECS;
