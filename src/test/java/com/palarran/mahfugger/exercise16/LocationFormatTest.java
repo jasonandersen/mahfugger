@@ -2,10 +2,14 @@ package com.palarran.mahfugger.exercise16;
 
 import static org.junit.Assert.assertEquals;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+
 import org.junit.Test;
 
 import com.palarran.mahfugger.location.Location;
 import com.palarran.mahfugger.location.LocationFormat;
+import com.palarran.mahfugger.location.TrackPoint;
 
 /**
  * Test to ensure Locations are properly formatted.
@@ -43,6 +47,17 @@ public class LocationFormatTest {
     public void testDeg() {
         format = LocationFormat.DEGREES;
         assertEquals("47.89234°N 123.456°W", format.format(location));
+    }
+
+    @Test
+    public void testTrackPointFormat() {
+        ZoneId zone = ZoneId.of("America/Los_Angeles");
+        TrackPoint point = new TrackPoint(47.89234, -123.456, ZonedDateTime.of(2015, 4, 1, 12, 0, 0, 0, zone));
+        format = LocationFormat.DEGREES_MINS_SECS;
+        assertEquals("47° 53' 32.424\"N 123° 27' 21.6\"W", format.format(point));
+        /*
+         * Why does Java let me pass in a TrackPoint to LocationFormat.format(Location)?
+         */
     }
 
     /*
