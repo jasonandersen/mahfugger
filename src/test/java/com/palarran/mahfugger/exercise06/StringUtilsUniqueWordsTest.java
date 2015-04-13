@@ -18,6 +18,8 @@ public class StringUtilsUniqueWordsTest {
 
     private static final Logger log = Logger.getLogger(StringUtilsUniqueWordsTest.class);
 
+    private static final String PATH = "/Users/jason/dev/workspace/mahfugger/src/test/resources/files/i-like-monkeys.txt";
+
     /*
      * FIXME - make these tests pass.
      */
@@ -26,8 +28,7 @@ public class StringUtilsUniqueWordsTest {
 
     @Test
     public void testFile() throws IOException {
-        String path = "/Users/jason/dev/workspace/mahfugger/src/test/resources/files/i-like-monkeys.txt";
-        output = StringUtils.loadFileContents(path);
+        output = StringUtils.loadFileContents(PATH);
         log.debug(output);
         //make sure the file was loaded
         assertEquals(2618, output.length());
@@ -56,8 +57,7 @@ public class StringUtilsUniqueWordsTest {
 
     @Test
     public void testLoadWordCount() {
-        Map<String, Integer> wordCount = StringUtils
-                .countWordsInFile("/Users/jason/dev/workspace/mahfugger/src/test/resources/files/i-like-monkeys.txt");
+        Map<String, Integer> wordCount = StringUtils.countWordsInFile(PATH);
         assertEquals(new Integer(13), wordCount.get("monkeys"));
         assertEquals(new Integer(2), wordCount.get("freezer"));
     }
