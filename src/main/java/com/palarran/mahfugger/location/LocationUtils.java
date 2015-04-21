@@ -17,7 +17,8 @@ public class LocationUtils {
     /**
      * Loads a list of {@link Location} objects from within a CSV file containing
      * latitudes and longitudes. Each line in the file will contain a numeric
-     * latitude and numeric longitude separated by a comma.
+     * latitude and numeric longitude separated by a comma. The list will be ordered
+     * by appearance in the file.
      * @param path string containing the absolute path to the file
      * @return a list containing all the {@link Location} objects loaded from the
      *      file
