@@ -45,10 +45,10 @@ public class LoadTrackPointsFromFileTest {
     }
 
     @Test
-    public void testFirstPointIsCorrect() {
-        TrackPoint first = points.get(0); //<-- should be 50.917278,-127.937508
-        assertEquals(50.917278, first.getLatitude(), 0.000001);
-        assertEquals(-127.937508, first.getLongitude(), 0.000001);
+    public void testSecondPointIsCorrect() {
+        TrackPoint second = points.get(0); //<-- should be 50.917278,-127.937508
+        assertEquals(50.917278, second.getLatitude(), 0.000001);
+        assertEquals(-127.937508, second.getLongitude(), 0.000001);
     }
 
     @Test
