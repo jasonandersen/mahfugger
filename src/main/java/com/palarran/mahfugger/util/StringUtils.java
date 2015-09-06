@@ -4,13 +4,14 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+
 /**
  * A grab bag of string-based utility methods.
  */
 public class StringUtils {
-	static StringBuffer original;
-	static StringBuffer expectedOutput;
-	static StringBuffer actualOutput;
+	static String original;
+	static String expectedOutput;
+	static String actualOutput;
 	
     /**
      * Private constructor.
@@ -21,9 +22,8 @@ public class StringUtils {
          * This is a private constructor. By making the constructor private, that prevents anyone
          * from instantiating this class. This class will be comprised of static methods only and
          * therefore would not make sense to instantiate.
-         */	
-    }
-           
+         */
+    }	           
     /**
      * @param original the string to reverse
      * @return 
@@ -32,15 +32,13 @@ public class StringUtils {
      * @throws IllegalArgumentException if original is null     
      */
    
-      
-    public static StringBuffer main(String args[]) {
-    	StringBuffer original = new StringBuffer("abc");
-        original.reverse();
-		original = expectedOutput;
-        expectedOutput = actualOutput;
-        return actualOutput;
-	}
-
+    public static String reverse(String original) {
+    	int length = original.length();
+   	 for ( int i = length - 1 ; i >= 0 ; i-- )
+	         expectedOutput = expectedOutput + original.charAt(i);
+    	return expectedOutput;
+    }
+    
     /**
      * @param paragraph the string to break down into words
      * @return a list containing the words in the paragraph in the order in which they appear
