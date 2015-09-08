@@ -4,16 +4,13 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-
 /**
  * A grab bag of string-based utility methods.
  */
+
 public class StringUtils {
-	static String original;
-	static String expectedOutput;
-	static String actualOutput;
 	
-    /**
+	 /**
      * Private constructor.
      */
 	
@@ -23,20 +20,33 @@ public class StringUtils {
          * from instantiating this class. This class will be comprised of static methods only and
          * therefore would not make sense to instantiate.
          */
+    	
     }	           
     /**
      * @param original the string to reverse
-     * @return 
      * @return a new string that contains all of the characters from the original string in
      *      reverse order.
      * @throws IllegalArgumentException if original is null     
      */
    
     public static String reverse(String original) {
-    	int length = original.length();
-   	 for ( int i = length - 1 ; i >= 0 ; i-- )
-	         expectedOutput = expectedOutput + original.charAt(i);
-    	return expectedOutput;
+    	 if (original == null) {
+             throw new IllegalArgumentException("holy shit");
+         }
+    	//StringBuffer buffer = new StringBuffer(original);
+        //return buffer.reverse().toString();
+    	 
+    	 String flipIt = new String(original);
+     	 String expectedOutput = null;
+     	 String actualOutput = null;
+     
+     	 int length = flipIt.length();
+   	 	
+     	 for ( int i = length - 1 ; i >= 0 ; i-- )
+	         expectedOutput = expectedOutput + flipIt.charAt(i);
+     	 actualOutput = expectedOutput;
+     	 	return actualOutput;
+	
     }
     
     /**
