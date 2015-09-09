@@ -3,13 +3,14 @@ package com.palarran.mahfugger.util;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import org.apache.log4j.Logger;
 
 /**
  * A grab bag of string-based utility methods.
  */
 
 public class StringUtils {
-	
+	 private static final Logger log = Logger.getLogger(StringUtils.class);
 	 /**
      * Private constructor.
      */
@@ -30,23 +31,24 @@ public class StringUtils {
      */
    
     public static String reverse(String original) {
-    	 if (original == null) {
-             throw new IllegalArgumentException("holy shit");
-         }
-    	//StringBuffer buffer = new StringBuffer(original);
-        //return buffer.reverse().toString();
-    	 
-    	 String flipIt = new String(original);
-     	 String expectedOutput = null;
-     	 String actualOutput = null;
+    	if (original == null) {
+            throw new IllegalArgumentException("Oopsie");
+        }
+    	    	
+       	 String flipIt = new String(original);
+     	 String expectedOutput = "";
+     	 String actualOutput = "";
      
-     	 int length = flipIt.length();
-   	 	
-     	 for ( int i = length - 1 ; i >= 0 ; i-- )
-	         expectedOutput = expectedOutput + flipIt.charAt(i);
-     	 actualOutput = expectedOutput;
-     	 	return actualOutput;
-	
+     	 int input = flipIt.length();
+     	
+     	 for (int i = input - 1 ; i >= 0 ; i-- )
+             expectedOutput = expectedOutput + flipIt.charAt(i);
+     	 	 log.info("Output of flipIt after loop = " + flipIt);
+     	 	 log.info("Length of input is: " + input);
+        	 actualOutput = expectedOutput;
+        	 log.info("Expected Output = " + expectedOutput);
+        	 log.info("Actual Output = " + actualOutput);
+        	 return actualOutput;
     }
     
     /**
