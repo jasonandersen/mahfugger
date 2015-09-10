@@ -70,7 +70,7 @@ public class StringUtils {
     	    	
     	ArrayList<String> testOutput = new ArrayList<String>(Arrays.asList(breakDown));
     	log.info("Output: " + testOutput);
-		return testOutput;
+    	return testOutput;
     }
 
     /**
