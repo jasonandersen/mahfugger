@@ -12,47 +12,47 @@ import org.apache.log4j.Logger;
  */
 
 public class StringUtils {
-	 private static final Logger log = Logger.getLogger(StringUtils.class);
-	 /**
-     * Private constructor.
-     */
-	
+    private static final Logger log = Logger.getLogger(StringUtils.class);
+
+    /**
+    * Private constructor.
+    */
+
     private StringUtils() {
         /*
          * This is a private constructor. By making the constructor private, that prevents anyone
          * from instantiating this class. This class will be comprised of static methods only and
          * therefore would not make sense to instantiate.
          */
-    	
-    }	           
+
+    }
+
     /**
      * @param original the string to reverse
      * @return a new string that contains all of the characters from the original string in
      *      reverse order.
      * @throws IllegalArgumentException if original is null     
      */
-   
+
     public static String reverse(String original) {
-    	if (original == null) {
+        if (original == null) {
             throw new IllegalArgumentException("Oopsie");
         }
-    	    	
-       	 String flipIt = new String(original);
-     	 String expectedOutput = "";
-     	 String actualOutput = "";
-     
-     	 int input = flipIt.length();
-     	
-     	 for (int i = input - 1 ; i >= 0 ; i-- )
-             expectedOutput = expectedOutput + flipIt.charAt(i);
-     	 	 log.info("Output of flipIt after loop = " + flipIt);
-     	 	 log.info("Length of input is: " + input);
-        	 actualOutput = expectedOutput;
-        	 log.info("Expected Output = " + expectedOutput);
-        	 log.info("Actual Output = " + actualOutput);
-        	 return actualOutput;
+
+        String flipIt = new String(original);
+        String expectedOutput = "";
+        String actualOutput = "";
+
+        int input = flipIt.length();
+
+        for (int i = input - 1; i >= 0; i--)
+            expectedOutput = expectedOutput + flipIt.charAt(i);
+
+        actualOutput = expectedOutput;
+
+        return actualOutput;
     }
-    
+
     /**
      * @param paragraph the string to break down into words
      * @return a list containing the words in the paragraph in the order in which they appear
@@ -61,16 +61,19 @@ public class StringUtils {
      * @throws IllegalArgumentException if paragraph is null
      */
     public static List<String> splitWords(String paragraph) {
-    	if (paragraph == null) {
+        if (paragraph == null) {
             throw new IllegalArgumentException("Oopsie");
-            }
-    	
-    	String testInput = new String (paragraph);
-    	String[] breakDown = testInput.split("\\W+");
-    	    	
-    	ArrayList<String> testOutput = new ArrayList<String>(Arrays.asList(breakDown));
-    	log.info("Output: " + testOutput);
-    	return testOutput;
+        }
+        if (paragraph == "") {
+            return new ArrayList<String>();
+        }
+
+        String testInput = new String(paragraph);
+        String[] breakDown = testInput.split("\\W+");
+
+        ArrayList<String> testOutput = new ArrayList<String>(Arrays.asList(breakDown));
+
+        return testOutput;
     }
 
     /**
