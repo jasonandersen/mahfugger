@@ -1,6 +1,8 @@
 package com.palarran.mahfugger.util;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -63,7 +65,16 @@ public class StringUtils {
      * @throws IllegalArgumentException if paragraph is null
      */
     public static List<String> splitWords(String paragraph) {
-        throw new UnsupportedOperationException("not implemented yet");
+    	if (paragraph == null) {
+            throw new IllegalArgumentException("Oopsie");
+            }
+    	
+    	String testInput = new String (paragraph);
+    	String[] breakDown = testInput.split("\\W+");
+    	    	
+    	ArrayList<String> testOutput = new ArrayList<String>(Arrays.asList(breakDown));
+    	log.info("Output: " + testOutput);
+    	return testOutput;
     }
 
     /**
