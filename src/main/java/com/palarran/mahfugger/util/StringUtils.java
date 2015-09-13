@@ -3,6 +3,7 @@ package com.palarran.mahfugger.util;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -46,6 +47,7 @@ public class StringUtils {
 
         int input = flipIt.length();
 
+<<<<<<< HEAD
         for (int i = input - 1; i >= 0; i--) {
             expectedOutput = expectedOutput + flipIt.charAt(i);
         }
@@ -54,6 +56,13 @@ public class StringUtils {
         actualOutput = expectedOutput;
         log.info("Expected Output = " + expectedOutput);
         log.info("Actual Output = " + actualOutput);
+=======
+        for (int i = input - 1; i >= 0; i--)
+            expectedOutput = expectedOutput + flipIt.charAt(i);
+
+        actualOutput = expectedOutput;
+
+>>>>>>> origin/cb
         return actualOutput;
     }
 
@@ -65,16 +74,19 @@ public class StringUtils {
      * @throws IllegalArgumentException if paragraph is null
      */
     public static List<String> splitWords(String paragraph) {
-    	if (paragraph == null) {
+        if (paragraph == null) {
             throw new IllegalArgumentException("Oopsie");
-            }
-    	
-    	String testInput = new String (paragraph);
-    	String[] breakDown = testInput.split("\\W+");
-    	    	
-    	ArrayList<String> testOutput = new ArrayList<String>(Arrays.asList(breakDown));
-    	log.info("Output: " + testOutput);
-    	return testOutput;
+        }
+        if (paragraph == "") {
+            return new ArrayList<String>();
+        }
+
+        String testInput = new String(paragraph);
+        String[] breakDown = testInput.split("\\W+");
+
+        ArrayList<String> testOutput = new ArrayList<String>(Arrays.asList(breakDown));
+
+        return testOutput;
     }
 
     /**
@@ -84,7 +96,21 @@ public class StringUtils {
      * @throws IllegalArgumentException if paragraph is null
      */
     public static List<String> splitWordsAlphabetically(String paragraph) {
-        throw new UnsupportedOperationException("not implemented yet");
+
+        String test5Input = new String(paragraph);
+        String[] words = test5Input.split("\\W");
+
+        ArrayList<String> test5Output = new ArrayList<String>(Arrays.asList(words));
+
+        test5Output.addAll(test5Output);
+
+        Collections.sort(test5Output);
+        log.info("Output: " + test5Output);
+        for (String alpha : test5Output) {
+            System.out.println(alpha);
+        }
+
+        return test5Output;
     }
 
     /**
