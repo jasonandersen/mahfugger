@@ -47,22 +47,13 @@ public class StringUtils {
 
         int input = flipIt.length();
 
-<<<<<<< HEAD
         for (int i = input - 1; i >= 0; i--) {
             expectedOutput = expectedOutput + flipIt.charAt(i);
         }
         log.info("Output of flipIt after loop = " + flipIt);
         log.info("Length of input is: " + input);
         actualOutput = expectedOutput;
-        log.info("Expected Output = " + expectedOutput);
-        log.info("Actual Output = " + actualOutput);
-=======
-        for (int i = input - 1; i >= 0; i--)
-            expectedOutput = expectedOutput + flipIt.charAt(i);
 
-        actualOutput = expectedOutput;
-
->>>>>>> origin/cb
         return actualOutput;
     }
 
