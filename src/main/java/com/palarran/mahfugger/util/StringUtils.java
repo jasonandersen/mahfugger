@@ -4,12 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-
 import org.apache.log4j.Logger;
 
 /**
@@ -88,25 +85,25 @@ public class StringUtils {
      * @throws IllegalArgumentException if paragraph is null
      */
     public static List<String> splitWordsAlphabetically(String paragraph) {
-        if (paragraph == null) { //test does not check for this but it is mentioned in notes above.
+        if (paragraph == null) { //Test does not check for this but it is mentioned in notes above.
             throw new IllegalArgumentException("Oopsie");
         }
 
         String test5Input = new String(paragraph);
 
         ArrayList<String> test5Output = new ArrayList<String>(Arrays.asList(test5Input.split("\\W")));
+        log.info("Input: " + test5Input);
 
-        Collections.sort(test5Output, String.CASE_INSENSITIVE_ORDER);
-        
-        log.info("Output: " + test5Output);
-        
         LinkedHashSet<String> noDupes = new LinkedHashSet<String>();
 
         noDupes.addAll(test5Output);
-        
+
         test5Output.clear();
-        
+
         test5Output.addAll(noDupes);
+
+        Collections.sort(test5Output, String.CASE_INSENSITIVE_ORDER);
+        log.info("Output: " + test5Output);
 
         return test5Output;
 
