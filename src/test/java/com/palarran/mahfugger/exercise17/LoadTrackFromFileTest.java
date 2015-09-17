@@ -54,8 +54,15 @@ public class LoadTrackFromFileTest {
     }
 
     @Test
+    public void testLastTrackPoint() {
+        TrackPoint expectedLast = new TrackPoint(50.677971, -128.351074, "2013-07-08T21:28:58Z");
+        TrackPoint actualLast = track.getTrackPoint(2917);
+        assertEquals(expectedLast, actualLast);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
     public void testGetTrackPointIllegalIndex() {
-        //FIXME implement this!
+        track.getTrackPoint(-1);
     }
 
 }
