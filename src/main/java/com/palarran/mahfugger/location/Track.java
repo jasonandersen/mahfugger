@@ -1,5 +1,6 @@
 package com.palarran.mahfugger.location;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -7,15 +8,13 @@ import java.util.List;
  * 
  * @author Jason Andersen (andersen.jason@gmail.com)
  */
-public class Track {
-
-    private final List<TrackPoint> points;
+public class Track implements Locations {
 
     /**
      * @param points
      */
     public Track(List<TrackPoint> points) {
-        this.points = points;
+        throw new UnsupportedOperationException("not implemented yet");
     }
 
     /**
@@ -23,7 +22,7 @@ public class Track {
      *      return zero.
      */
     public int getNumberTrackPoints() {
-        return points.size();
+        throw new UnsupportedOperationException("not implemented yet");
     }
 
     /**
@@ -31,7 +30,21 @@ public class Track {
      * @return the track point at the specified index
      */
     public TrackPoint getTrackPoint(int index) {
-        return points.get(index);
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+
+    /**
+     * @see com.palarran.mahfugger.location.Locations#getLocations()
+     */
+    public Collection<Location> getLocations() {
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+
+    /**
+     * @return a geographic rectangle that surrounds all of the points in this track
+     */
+    public GeographicBoundingBox getBoundingBox() {
+        throw new UnsupportedOperationException("not implemented yet");
     }
 
 }
