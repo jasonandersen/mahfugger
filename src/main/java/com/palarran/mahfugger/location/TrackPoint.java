@@ -1,7 +1,5 @@
 package com.palarran.mahfugger.location;
 
-import java.time.Instant;
-import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 /**
@@ -10,6 +8,9 @@ import java.time.ZonedDateTime;
  */
 public class TrackPoint extends Location {
 
+    /*
+     * Why does this member variable have the final keyword on it?
+     */
     private final ZonedDateTime timestamp;
 
     /**
@@ -43,8 +44,7 @@ public class TrackPoint extends Location {
      * @return
      */
     private ZonedDateTime parseTimeStamp(String timestampText) {
-        Instant instant = Instant.parse(timestampText);
-        return ZonedDateTime.ofInstant(instant, ZoneId.systemDefault());
+        throw new UnsupportedOperationException("not implemented yet");
     }
 
     /**

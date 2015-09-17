@@ -10,13 +10,11 @@ import java.util.List;
  */
 public class Track implements Locations {
 
-    private final List<TrackPoint> points;
-
     /**
      * @param points
      */
     public Track(List<TrackPoint> points) {
-        this.points = points;
+        throw new UnsupportedOperationException("not implemented yet");
     }
 
     /**
@@ -24,7 +22,7 @@ public class Track implements Locations {
      *      return zero.
      */
     public int getNumberTrackPoints() {
-        return points.size();
+        throw new UnsupportedOperationException("not implemented yet");
     }
 
     /**
@@ -32,7 +30,7 @@ public class Track implements Locations {
      * @return the track point at the specified index
      */
     public TrackPoint getTrackPoint(int index) {
-        return points.get(index);
+        throw new UnsupportedOperationException("not implemented yet");
     }
 
     /**
