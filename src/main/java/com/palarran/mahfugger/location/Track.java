@@ -28,15 +28,6 @@ public class Track implements Locations {
     }
 
     /**
-     * Gets a track point at a specific index
-     * @param index
-     * @return the track point at the specified index
-     */
-    public TrackPoint getTrackPoint(int index) {
-        throw new UnsupportedOperationException("not implemented yet");
-    }
-
-    /**
      * @see com.palarran.mahfugger.location.Locations#getLocations()
      */
     public Collection<Location> getLocations() {

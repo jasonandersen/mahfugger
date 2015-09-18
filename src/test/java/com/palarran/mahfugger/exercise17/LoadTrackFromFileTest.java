@@ -57,11 +57,6 @@ public class LoadTrackFromFileTest {
         assertEquals(expectedLast, actualLast);
     }
 
-    @Test(expected = IndexOutOfBoundsException.class)
-    public void testGetTrackPointIllegalIndex() {
-        track.getTrackPoint(-1);
-    }
-
     /*
      * ****** SPOILER ALERT - ONLY READ BELOW IF YOU'RE STUCK *******
      * 
