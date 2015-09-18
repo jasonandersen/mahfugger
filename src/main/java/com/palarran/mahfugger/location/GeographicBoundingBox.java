@@ -2,7 +2,7 @@ package com.palarran.mahfugger.location;
 
 /**
  * Represents an imaginary rectangle drawn around a group of {@link Location}s that contains
- * every {@link Location}.
+ * every {@link Location}. The rectangle is defined by its corners.
  */
 public class GeographicBoundingBox {
 
@@ -27,6 +27,8 @@ public class GeographicBoundingBox {
      *      else
      *          find it
      *          return it
+     * This gets you better performance but it's more complicated (especially when we start getting
+     * into multi-threading and thread safety).         
      */
 
     /**

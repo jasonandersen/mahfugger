@@ -25,7 +25,7 @@ public class TrackPoint extends Location {
     }
 
     /**
-     * Overloaded onstructor that will parse timestamps in ISO_FORMAT
+     * Overloaded onstructor that will parse timestamps in ISO_INSTANT format
      * @param latitude
      * @param longitude
      * @param timestampText - timestamp in the ISO_INSTANT format
@@ -34,14 +34,13 @@ public class TrackPoint extends Location {
         super(latitude, longitude);
         this.timestamp = parseTimeStamp(timestampText);
         /*
-         * Why is it OK to have two different constructors?
          * Why would I want to have two different constructors?
          */
     }
 
     /**
-     * @param timestamp2
-     * @return
+     * @param timestampText string containing a timestamp in ISO_INSTANT format
+     * @return a {@link ZonedDateTime} parsed from timestampText
      */
     private ZonedDateTime parseTimeStamp(String timestampText) {
         throw new UnsupportedOperationException("not implemented yet");
