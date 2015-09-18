@@ -24,9 +24,9 @@ public class GeographicBoundingBox {
      * looks like so:
      *      have we identified the north east corner yet?
      *          return it
-    *          else
-    *              find it
-    *              return it
+     *      else
+     *          find it
+     *          return it
      */
 
     /**
