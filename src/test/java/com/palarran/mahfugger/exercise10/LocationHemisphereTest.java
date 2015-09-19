@@ -29,14 +29,28 @@ public class LocationHemisphereTest {
     private Location target;
 
     @Test
-    public void testNorthWest() {
+    public void testNorthWest1() {
         target = new Location(50.0, -100.0);
         assertEquals(LatitudinalHemisphere.NORTHERN, target.getLatitudinalHemisphere());
         assertEquals(LongitudinalHemisphere.WESTERN, target.getLongitudinalHemisphere());
     }
 
     @Test
-    public void testNorthEast() {
+    public void testNorthWest2() {
+        target = new Location(0.1, -0.1);
+        assertEquals(LatitudinalHemisphere.NORTHERN, target.getLatitudinalHemisphere());
+        assertEquals(LongitudinalHemisphere.WESTERN, target.getLongitudinalHemisphere());
+    }
+
+    @Test
+    public void testNorthWest3() {
+        target = new Location(90.0, -180.0);
+        assertEquals(LatitudinalHemisphere.NORTHERN, target.getLatitudinalHemisphere());
+        assertEquals(LongitudinalHemisphere.WESTERN, target.getLongitudinalHemisphere());
+    }
+
+    @Test
+    public void testNorthEast1() {
         target = new Location(50.0, 100.0);
         assertEquals(LatitudinalHemisphere.NORTHERN, target.getLatitudinalHemisphere());
         assertEquals(LongitudinalHemisphere.EASTERN, target.getLongitudinalHemisphere());
@@ -44,15 +58,61 @@ public class LocationHemisphereTest {
     }
 
     @Test
-    public void testSouthWest() {
+    public void testNorthEast2() {
+        target = new Location(0.1, 0.1);
+        assertEquals(LatitudinalHemisphere.NORTHERN, target.getLatitudinalHemisphere());
+        assertEquals(LongitudinalHemisphere.EASTERN, target.getLongitudinalHemisphere());
+
+    }
+
+    @Test
+    public void testNorthEast3() {
+        target = new Location(90.0, 180.0);
+        assertEquals(LatitudinalHemisphere.NORTHERN, target.getLatitudinalHemisphere());
+        assertEquals(LongitudinalHemisphere.EASTERN, target.getLongitudinalHemisphere());
+
+    }
+
+    @Test
+    public void testSouthWest1() {
         target = new Location(-50.0, -100.0);
         assertEquals(LatitudinalHemisphere.SOUTHERN, target.getLatitudinalHemisphere());
         assertEquals(LongitudinalHemisphere.WESTERN, target.getLongitudinalHemisphere());
     }
 
     @Test
-    public void testSouthEast() {
+    public void testSouthWest2() {
+        target = new Location(-0.1, -0.1);
+        assertEquals(LatitudinalHemisphere.SOUTHERN, target.getLatitudinalHemisphere());
+        assertEquals(LongitudinalHemisphere.WESTERN, target.getLongitudinalHemisphere());
+    }
+
+    @Test
+    public void testSouthWest3() {
+        target = new Location(-90.0, -180.0);
+        assertEquals(LatitudinalHemisphere.SOUTHERN, target.getLatitudinalHemisphere());
+        assertEquals(LongitudinalHemisphere.WESTERN, target.getLongitudinalHemisphere());
+    }
+
+    @Test
+    public void testSouthEast1() {
         target = new Location(-50.0, 100.0);
+        assertEquals(LatitudinalHemisphere.SOUTHERN, target.getLatitudinalHemisphere());
+        assertEquals(LongitudinalHemisphere.EASTERN, target.getLongitudinalHemisphere());
+
+    }
+
+    @Test
+    public void testSouthEast2() {
+        target = new Location(-0.1, 0.1);
+        assertEquals(LatitudinalHemisphere.SOUTHERN, target.getLatitudinalHemisphere());
+        assertEquals(LongitudinalHemisphere.EASTERN, target.getLongitudinalHemisphere());
+
+    }
+
+    @Test
+    public void testSouthEast3() {
+        target = new Location(-90.0, 180.0);
         assertEquals(LatitudinalHemisphere.SOUTHERN, target.getLatitudinalHemisphere());
         assertEquals(LongitudinalHemisphere.EASTERN, target.getLongitudinalHemisphere());
 

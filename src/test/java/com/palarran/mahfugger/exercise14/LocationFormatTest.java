@@ -1,4 +1,4 @@
-package com.palarran.mahfugger.exercise16;
+package com.palarran.mahfugger.exercise14;
 
 import static org.junit.Assert.assertEquals;
 
@@ -18,6 +18,10 @@ import com.palarran.mahfugger.location.TrackPoint;
 public class LocationFormatTest {
 
     /*
+     * I want to be able to display Location objects in different formats. Because I only have a 
+     * finite number of formats I want to support, I'm going to use an enum to identify which
+     * formats I'm going to support.
+     * 
      * LocationFormat is an enum that represents the only possible location formatting options
      * for a Location class. Enum are objects however and they can contain both data and behavior.
      * Each enumeration in an enum class is it's own instance of that class. So for LocationFormat,
@@ -65,7 +69,7 @@ public class LocationFormatTest {
         format = LocationFormat.DEGREES_MINS_SECS;
         assertEquals("47° 53' 32.424\"N 123° 27' 21.6\"W", format.format(point));
         /*
-         * Why does Java let me pass in a TrackPoint to LocationFormat.format(Location)?
+         * Why does Java let me pass in a TrackPoint in to a method that is asking for a Location?
          */
     }
 

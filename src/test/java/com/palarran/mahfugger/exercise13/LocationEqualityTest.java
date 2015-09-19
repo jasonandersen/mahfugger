@@ -17,9 +17,10 @@ import com.palarran.mahfugger.location.Location;
 public class LocationEqualityTest {
 
     /*
+     * What does it mean to say that locationA equals locationB? This is important in lots of situations.
      * A class can determine it's own algorithm for equality. Here we're going to ensure that the
      * Location class correctly determines equality. In Java, in order to check equality, we use 
-     * two different methods:
+     * two different methods (both _have_ to be implemented!):
      *      equals()
      *      hashcode()
      * 

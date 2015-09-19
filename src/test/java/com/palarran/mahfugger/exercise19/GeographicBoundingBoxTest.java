@@ -1,4 +1,4 @@
-package com.palarran.mahfugger.exercise18;
+package com.palarran.mahfugger.exercise19;
 
 import static org.junit.Assert.assertEquals;
 
@@ -25,7 +25,7 @@ public class GeographicBoundingBoxTest {
 
     @Before
     public void setup() throws IOException {
-        track = TrackFactory.loadTrackFromFile(BULL_HARBOR_TO_SEA_OTTER);
+        track = TrackFactory.loadTrackFromCSVFile(BULL_HARBOR_TO_SEA_OTTER);
         box = track.getBoundingBox();
     }
 
@@ -58,4 +58,34 @@ public class GeographicBoundingBoxTest {
         assertEquals(expected, box.getSouthEastCorner());
     }
 
+    /*
+     * ****** SPOILER ALERT - ONLY READ BELOW IF YOU'RE STUCK *******
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     *
+     *
+     *
+     *
+     *
+     * How do you find the north east most corner? What defines the north east corner is that it's latitude
+     * is the latitude of the trackpoint with the maximum latitude and its longitude is the longitude of 
+     * the trackpoint with the maximum longitude.
+     * 
+     * Northwest corner? Maximum latitude, minimum longitude.
+     * 
+     * Southwest corner? Minimum latitude, minimum longitude.
+     * 
+     * Southeast corner? Minimum latitude, maximum longitude.
+     * 
+     * For extra credit, can you write your algorithm so you only loop through the trackpoints one time to
+     * find all four points?
+     * 
+     */
 }

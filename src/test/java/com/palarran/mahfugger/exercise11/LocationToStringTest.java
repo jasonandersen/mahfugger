@@ -75,9 +75,10 @@ public class LocationToStringTest {
      * HINT: override toString() in the Location class. Right now the Location class is inheriting the
      * toString() method from the Object class.
      * 
-     * HINT: see the Javadocs for the java.util.Formatter class. Also look up printf() formatting in Evernote.
-     * You really don't ever want to build dynamic strings by just concatenating them together "a" + "b", ect.
-     * Use printf() style formatting to do that.
+     * HINT: You probably started out with StringBuilder which is great. Much better than concatenating. However,
+     * see the Javadocs for the java.util.Formatter class. Also look up printf() formatting in Evernote. It's
+     * a really powerful way to format strings. I didn't commit the syntax to memory. Like regex, I have to look
+     * it up anytime I do something complicated. But it's the tits when it comes to dynamic strings.
      * 
      * 
      * 

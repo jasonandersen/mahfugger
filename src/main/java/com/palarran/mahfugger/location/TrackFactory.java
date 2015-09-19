@@ -25,7 +25,7 @@ public class TrackFactory {
      * @throws IllegalArgumentException when path is null
      * @see {@link DateTimeFormatter}
      */
-    public static Track loadTrackFromFile(String path) throws IOException {
+    public static Track loadTrackFromCSVFile(String path) throws IOException {
         throw new UnsupportedOperationException("not implemented yet");
     }
 }
