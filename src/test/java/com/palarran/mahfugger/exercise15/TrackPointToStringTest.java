@@ -1,4 +1,4 @@
-package com.palarran.mahfugger.exercise14;
+package com.palarran.mahfugger.exercise15;
 
 import static org.junit.Assert.assertEquals;
 
@@ -15,6 +15,12 @@ import com.palarran.mahfugger.location.TrackPoint;
 public class TrackPointToStringTest {
 
     /*
+     * Now we're going to start talking about inheritence. I'm introducing a new class called TrackPoint.
+     * This represents a single point along a GPS track. So, along with latitude and longitude, we also
+     * need to know the timestamp when our boat was on that track point. Rather than write TrackPoint from
+     * scratch, I'm going to _extend_ Location. So that means a TrackPoint object is also a Location object.
+     * A TrackPoint object has latitude, longitude and a timestamp.
+     * 
      * TrackPoint inherits from Location which means right now, its toString() method is being inherited
      * from the Location class. Since we added a timestamp property to the class, override the toString()
      * method in TrackPoint to properly reflect the toString value we want.
@@ -67,7 +73,7 @@ public class TrackPointToStringTest {
      * 
      * You can leverage the code you wrote for Location.toString() without having to rewrite it in TrackPoint.toString()
      * by calling super.toString(). That will call the parent class' version of toString(). That way in TrackPoint.toString()
-     * all you have to focus on is how to format the timestamp.
+     * all you have to focus on is how to format the timestamp and then append super.toString().
      * 
      * 
      * 

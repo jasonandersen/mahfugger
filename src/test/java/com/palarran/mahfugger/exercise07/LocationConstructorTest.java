@@ -13,6 +13,15 @@ import com.palarran.mahfugger.location.Location;
 public class LocationConstructorTest {
 
     /*
+     * You're going to start working with the Location class. Location represents a geographic
+     * point somewhere on Earth as defined by a Latitude and Longitude. For this exercise, you're
+     * going to be writing the constructor for the Location class. If you're not familiar with 
+     * constructors, do some reading on them. A constructor is the code that's going to setup the
+     * object for use.
+     * 
+     * In these tests, I'm asking you to setup a Location instance correctly. I want to make sure
+     * that we can never get an incorrect latitude or longitude into an instance of a Location.
+     * 
      * FIXME - make these tests pass.
      */
 

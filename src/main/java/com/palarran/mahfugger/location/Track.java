@@ -13,6 +13,7 @@ import java.util.List;
 public class Track implements Locations {
 
     /**
+     * Constructor
      * @param points
      */
     public Track(List<TrackPoint> points) {
@@ -28,6 +29,7 @@ public class Track implements Locations {
     }
 
     /**
+     * @return all {@link Location}s for this track
      * @see com.palarran.mahfugger.location.Locations#getLocations()
      */
     public Collection<Location> getLocations() {
@@ -79,6 +81,13 @@ public class Track implements Locations {
         /*
          * the timestamp of the last track point
          */
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+
+    /**
+     * @return the total distance traveled in this track
+     */
+    public long getTotalDistance() {
         throw new UnsupportedOperationException("not implemented yet");
     }
 

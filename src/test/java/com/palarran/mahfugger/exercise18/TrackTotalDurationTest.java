@@ -1,4 +1,4 @@
-package com.palarran.mahfugger.exercise19;
+package com.palarran.mahfugger.exercise18;
 
 import static org.junit.Assert.assertEquals;
 
@@ -28,13 +28,7 @@ public class TrackTotalDurationTest {
 
     @Before
     public void setup() throws IOException {
-        track = TrackFactory.loadTrackFromFile(BULL_HARBOR_TO_SEA_OTTER);
-    }
-
-    @Test
-    public void testTotalDuration() {
-        Duration duration = track.getTotalDuration();
-        assertEquals(29419, duration.getSeconds());
+        track = TrackFactory.loadTrackFromCSVFile(BULL_HARBOR_TO_SEA_OTTER);
     }
 
     @Test
@@ -49,4 +43,38 @@ public class TrackTotalDurationTest {
         assertEquals("2013-07-08T21:28:58Z", end.format(DateTimeFormatter.ISO_INSTANT));
     }
 
+    @Test
+    public void testTotalDuration() {
+        Duration duration = track.getTotalDuration();
+        assertEquals(29419, duration.getSeconds());
+    }
+
+    /*
+     * ****** SPOILER ALERT - ONLY READ BELOW IF YOU'RE STUCK *******
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     *
+     * These tests are going to fail unless you sort the track points properly in the Track constructor.
+     * Don't take the easy way out and change the CSV file. Sort those bitches.
+     * 
+     * 
+     */
 }

@@ -1,4 +1,4 @@
-package com.palarran.mahfugger.exercise15;
+package com.palarran.mahfugger.exercise16;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -19,7 +19,8 @@ import com.palarran.mahfugger.location.TrackPoint;
 public class TrackPointEqualityTest {
 
     /*
-     * Override equals() and hashCode() for the TrackPoint class so they properly consider
+     * Equality means something different when it comes to TrackPoint objects. Override 
+     * equals() and hashCode() for the TrackPoint class so they properly consider
      * equality using the timestamp as well as coordinates.
      * 
      * FIXME - make these tests pass!

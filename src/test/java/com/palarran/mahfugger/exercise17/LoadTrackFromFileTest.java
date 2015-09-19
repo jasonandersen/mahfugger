@@ -17,6 +17,19 @@ import com.palarran.mahfugger.location.TrackPoint;
 public class LoadTrackFromFileTest {
 
     /* 
+     * Now that we understand track points, I want to be able to aggregate all my track points
+     * into a single Track object. This single Track object is going to give me information
+     * about my entire track, not just a single point.
+     * 
+     * I store all the data points for Tracks in a CSV file. I want to be able to load all of 
+     * those track points in the CSV file into a single Track object. This particular track 
+     * file came from our run in 2013 when we went around Cape Scott. I captured locations every
+     * 10 seconds.
+     * 
+     * FIXME - make these tests pass
+     */
+
+    /*
      * FIXME - change this file path to your local drive
      */
     private final static String BULL_HARBOR_TO_SEA_OTTER = "/Users/jason/dev/workspace/mahfugger/src/test/resources/files/bull-harbor-to-sea-otter-cove.csv";
@@ -25,7 +38,7 @@ public class LoadTrackFromFileTest {
 
     @Before
     public void setup() throws IOException {
-        track = TrackFactory.loadTrackFromFile(BULL_HARBOR_TO_SEA_OTTER);
+        track = TrackFactory.loadTrackFromCSVFile(BULL_HARBOR_TO_SEA_OTTER);
     }
 
     /*
@@ -34,12 +47,11 @@ public class LoadTrackFromFileTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testNullPath() throws IOException {
-        TrackFactory.loadTrackFromFile(null);
+        TrackFactory.loadTrackFromCSVFile(null);
     }
 
     @Test
-    public void testCountTrackPoints() throws IOException {
-        track = TrackFactory.loadTrackFromFile(BULL_HARBOR_TO_SEA_OTTER);
+    public void testCountTrackPoints() {
         assertEquals(2918, track.getNumberTrackPoints());
     }
 
@@ -70,10 +82,10 @@ public class LoadTrackFromFileTest {
      * 
      * If you're struggling with how to load the file, here's how I implemented the code.
     
-            Loads track points from file.
-            @param path
-            @return a list of track points
-            @throws IOException 
+            //Loads track points from file.
+            //@param path
+            //@return a list of track points
+            //@throws IOException 
             private static List<TrackPoint> loadTrackPointsFromFile(String path) throws IOException {
                 List<TrackPoint> points = new LinkedList<TrackPoint>();
                 BufferedReader reader = new BufferedReader(new FileReader(path));
@@ -84,18 +96,19 @@ public class LoadTrackFromFileTest {
                         points.add(point);
                     }
                 } finally {
-                    reader.close();
+                    reader.close(); //<-- make sure the reader is closed regardless of what happens!
                 }
                 return points;
             }
         
-            @param line
-            @return a TrackPoint parsed from a line from the file.
+            //@param line
+            //@return a TrackPoint parsed from a line from the file.
             private static TrackPoint parseTrackPoint(String line) {
                 String[] fields = line.split(",");
                 Double latitude = Double.parseDouble(fields[0]);
                 Double longitude = Double.parseDouble(fields[1]);
-                return new TrackPoint(latitude, longitude, fields[2]);
+                String timestamp = fields[2];
+                return new TrackPoint(latitude, longitude, timestamp);
             }
      * 
      *

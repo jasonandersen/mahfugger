@@ -68,8 +68,8 @@ public class LocationConstructorRefactorTest {
             location = new Location(90.1, 50.0);
             fail("No exception was thrown when a latitude was passed in that was too large.");
         } catch (InvalidCoordinatesException e) {
-            assertEquals(90.1f, e.getLatitude(), 0.00001);
-            assertEquals(50f, e.getLongitude(), 0.00001);
+            assertEquals(90.1, e.getLatitude(), 0.00001);
+            assertEquals(50.0, e.getLongitude(), 0.00001);
             assertEquals(e.getMessage(),
                     "Latitude (90.1) must be less than or equal to 90 degrees and greater than or equal to -90 degrees.");
         } catch (Exception e) {
@@ -84,8 +84,8 @@ public class LocationConstructorRefactorTest {
             location = new Location(-90.1, 50.0);
             fail("No exception was thrown when a latitude was passed in that was too small.");
         } catch (InvalidCoordinatesException e) {
-            assertEquals(-90.1f, e.getLatitude(), 0.00001);
-            assertEquals(50f, e.getLongitude(), 0.00001);
+            assertEquals(-90.1, e.getLatitude(), 0.00001);
+            assertEquals(50.0, e.getLongitude(), 0.00001);
             assertEquals(e.getMessage(),
                     "Latitude (-90.1) must be less than or equal to 90 degrees and greater than or equal to -90 degrees.");
         } catch (Exception e) {
@@ -100,8 +100,8 @@ public class LocationConstructorRefactorTest {
             location = new Location(25.0, 180.1);
             fail("No exception was thrown when a longitude was passed in that was too large.");
         } catch (InvalidCoordinatesException e) {
-            assertEquals(180.1f, e.getLongitude(), 0.00001);
-            assertEquals(25f, e.getLatitude(), 0.00001);
+            assertEquals(180.1, e.getLongitude(), 0.00001);
+            assertEquals(25.0, e.getLatitude(), 0.00001);
             assertEquals(e.getMessage(),
                     "Longitude (180.1) must be less than or equal to 180 degrees and greater than or equal to -180 degrees.");
         } catch (Exception e) {
@@ -116,8 +116,8 @@ public class LocationConstructorRefactorTest {
             location = new Location(25.0, -180.1);
             fail("No exception was thrown when a longitude was passed in that was too small.");
         } catch (InvalidCoordinatesException e) {
-            assertEquals(-180.1f, e.getLongitude(), 0.00001);
-            assertEquals(25f, e.getLatitude(), 0.00001);
+            assertEquals(-180.1, e.getLongitude(), 0.00001);
+            assertEquals(25.0, e.getLatitude(), 0.00001);
             assertEquals(e.getMessage(),
                     "Longitude (-180.1) must be less than or equal to 180 degrees and greater than or equal to -180 degrees.");
         } catch (Exception e) {
