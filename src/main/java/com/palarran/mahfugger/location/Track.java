@@ -6,7 +6,8 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * A track followed by a person or vehicle.
+ * A GPS track followed by a person or vehicle. A track consists of a series of
+ * {@link TrackPoint}s.
  * 
  * @author Jason Andersen (andersen.jason@gmail.com)
  */
@@ -29,14 +30,6 @@ public class Track implements Locations {
     }
 
     /**
-     * @return all {@link Location}s for this track
-     * @see com.palarran.mahfugger.location.Locations#getLocations()
-     */
-    public Collection<Location> getLocations() {
-        throw new UnsupportedOperationException("not implemented yet");
-    }
-
-    /**
      * @return a geographic rectangle that surrounds all of the points in this track
      */
     public GeographicBoundingBox getBoundingBox() {
@@ -53,14 +46,14 @@ public class Track implements Locations {
     /**
      * @return the track point with the earliest timestamp
      */
-    public TrackPoint getFirstTrackPoint() {
+    public TrackPoint getStartTrackPoint() {
         throw new UnsupportedOperationException("not implemented yet");
     }
 
     /**
      * @return the track point with the latest timestamp
      */
-    public TrackPoint getLastTrackPoint() {
+    public TrackPoint getEndingTrackPoint() {
         throw new UnsupportedOperationException("not implemented yet");
     }
 
@@ -68,9 +61,6 @@ public class Track implements Locations {
      * @return the start time of this track
      */
     public ZonedDateTime getStartTime() {
-        /*
-         * the timestamp of the first track point
-         */
         throw new UnsupportedOperationException("not implemented yet");
     }
 
@@ -78,9 +68,6 @@ public class Track implements Locations {
      * @return the ending time of this track
      */
     public ZonedDateTime getEndingTime() {
-        /*
-         * the timestamp of the last track point
-         */
         throw new UnsupportedOperationException("not implemented yet");
     }
 
@@ -88,6 +75,14 @@ public class Track implements Locations {
      * @return the total distance traveled in this track
      */
     public long getTotalDistance() {
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+
+    /**
+     * @return all {@link Location}s for this track
+     * @see com.palarran.mahfugger.location.Locations#getLocations()
+     */
+    public Collection<Location> getLocations() {
         throw new UnsupportedOperationException("not implemented yet");
     }
 

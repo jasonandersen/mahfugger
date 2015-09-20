@@ -9,7 +9,6 @@ import org.junit.Test;
 
 import com.palarran.mahfugger.location.Track;
 import com.palarran.mahfugger.location.TrackFactory;
-import com.palarran.mahfugger.location.TrackPoint;
 
 /**
  * Test the ability to load track points from a file.
@@ -23,8 +22,7 @@ public class LoadTrackFromFileTest {
      * 
      * I store all the data points for Tracks in a CSV file. I want to be able to load all of 
      * those track points in the CSV file into a single Track object. This particular track 
-     * file came from our run in 2013 when we went around Cape Scott. I captured locations every
-     * 10 seconds.
+     * file came from our run around Cape Scott in 2013. I captured locations every 10 seconds.
      * 
      * FIXME - make these tests pass
      */
@@ -55,22 +53,15 @@ public class LoadTrackFromFileTest {
         assertEquals(2918, track.getNumberTrackPoints());
     }
 
-    @Test
-    public void testFirstTrackPoint() {
-        TrackPoint expectedFirst = new TrackPoint(50.917278, -127.937508, "2013-07-08T13:18:39Z");
-        TrackPoint actualFirst = track.getFirstTrackPoint();
-        assertEquals(expectedFirst, actualFirst);
-    }
-
-    @Test
-    public void testLastTrackPoint() {
-        TrackPoint expectedLast = new TrackPoint(50.677971, -128.351074, "2013-07-08T21:28:58Z");
-        TrackPoint actualLast = track.getLastTrackPoint();
-        assertEquals(expectedLast, actualLast);
-    }
-
     /*
      * ****** SPOILER ALERT - ONLY READ BELOW IF YOU'RE STUCK *******
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
      * 
      * 
      * 
@@ -110,14 +101,6 @@ public class LoadTrackFromFileTest {
                 String timestamp = fields[2];
                 return new TrackPoint(latitude, longitude, timestamp);
             }
-     * 
-     *
-     * In the Track class constructor, you need to load the track points into a member variable. However, you
-     * can't assume that they are in the right order when they get passed in so you'll need to sort them. 
-     * If you make the TrackPoint class implement the Comparable<TrackPoint> interface, you can setup TrackPoint 
-     * objects so they naturally sort by timestamp. Then you can just add all the TrackPoint instances
-     * to a SortedSet implementation and you will inherently get a sorted collection.
-     * 
      * 
      */
 
