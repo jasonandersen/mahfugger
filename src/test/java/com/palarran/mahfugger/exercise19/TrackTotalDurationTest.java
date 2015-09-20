@@ -1,4 +1,4 @@
-package com.palarran.mahfugger.exercise18;
+package com.palarran.mahfugger.exercise19;
 
 import static org.junit.Assert.assertEquals;
 
@@ -49,32 +49,4 @@ public class TrackTotalDurationTest {
         assertEquals(29419, duration.getSeconds());
     }
 
-    /*
-     * ****** SPOILER ALERT - ONLY READ BELOW IF YOU'RE STUCK *******
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     *
-     * These tests are going to fail unless you sort the track points properly in the Track constructor.
-     * Don't take the easy way out and change the CSV file. Sort those bitches.
-     * 
-     * 
-     */
 }

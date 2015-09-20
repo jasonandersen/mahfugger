@@ -3,7 +3,7 @@ package com.palarran.mahfugger.location;
 import java.time.ZonedDateTime;
 
 /**
- * Represents a point on a track. It includes the latitude, longitude and the point in time
+ * Represents a point on a GPS track. It includes the latitude, longitude and the point in time
  * recorded at that location. This is an immutable object.
  */
 public class TrackPoint extends Location {
@@ -47,7 +47,7 @@ public class TrackPoint extends Location {
     }
 
     /**
-     * @return the timestamp
+     * @return the timestamp that this location was visited
      */
     public ZonedDateTime getTimestamp() {
         return timestamp;

@@ -26,40 +26,40 @@ public class TrackPointEqualityTest {
      * FIXME - make these tests pass!
      */
 
-    private TrackPoint locationA;
+    private TrackPoint trackPointA;
 
-    private TrackPoint locationB;
+    private TrackPoint trackPointB;
 
     private ZoneId timeZone = ZoneId.of("America/Los_Angeles");
 
     @Test
     public void testEquality() {
-        locationA = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2015, 04, 1, 12, 0, 0, 0, timeZone));
-        locationB = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2015, 04, 1, 12, 0, 0, 0, timeZone));
-        assertTrue(locationA.equals(locationB));
-        assertTrue(locationB.equals(locationA));
+        trackPointA = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2015, 04, 1, 12, 0, 0, 0, timeZone));
+        trackPointB = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2015, 04, 1, 12, 0, 0, 0, timeZone));
+        assertTrue(trackPointA.equals(trackPointB));
+        assertTrue(trackPointB.equals(trackPointA));
     }
 
     @Test
     public void testInequality() {
-        locationA = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2015, 04, 1, 12, 0, 0, 0, timeZone));
-        locationB = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2014, 03, 2, 11, 0, 0, 0, timeZone));
-        assertFalse(locationA.equals(locationB));
-        assertFalse(locationB.equals(locationA));
+        trackPointA = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2015, 04, 1, 12, 0, 0, 0, timeZone));
+        trackPointB = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2014, 03, 2, 11, 0, 0, 0, timeZone));
+        assertFalse(trackPointA.equals(trackPointB));
+        assertFalse(trackPointB.equals(trackPointA));
     }
 
     @Test
     public void testEqualityHashcode() {
-        locationA = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2015, 04, 1, 12, 0, 0, 0, timeZone));
-        locationB = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2015, 04, 1, 12, 0, 0, 0, timeZone));
-        assertTrue(locationA.hashCode() == locationB.hashCode());
+        trackPointA = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2015, 04, 1, 12, 0, 0, 0, timeZone));
+        trackPointB = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2015, 04, 1, 12, 0, 0, 0, timeZone));
+        assertTrue(trackPointA.hashCode() == trackPointB.hashCode());
     }
 
     @Test
     public void testInequalityHashcode() {
-        locationA = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2015, 04, 1, 12, 0, 0, 0, timeZone));
-        locationB = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2014, 03, 2, 11, 0, 0, 0, timeZone));
-        assertFalse(locationA.hashCode() == locationB.hashCode());
+        trackPointA = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2015, 04, 1, 12, 0, 0, 0, timeZone));
+        trackPointB = new TrackPoint(45.0, 90.0, ZonedDateTime.of(2014, 03, 2, 11, 0, 0, 0, timeZone));
+        assertFalse(trackPointA.hashCode() == trackPointB.hashCode());
     }
 
     @Test
