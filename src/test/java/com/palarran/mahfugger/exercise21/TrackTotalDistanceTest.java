@@ -11,7 +11,7 @@ import com.palarran.mahfugger.location.Track;
 import com.palarran.mahfugger.location.TrackFactory;
 
 /**
- * Test the ability to calculate the total distance of a {@link Track}.
+ * Test the ability to calculate the total distance traveled of a {@link Track}.
  */
 public class TrackTotalDistanceTest {
 
@@ -30,7 +30,7 @@ public class TrackTotalDistanceTest {
 
     @Test
     public void testTotalDistance() {
-        assertEquals(99999, track.getTotalDistance()); //FIXME - calculate this distance!!
+        assertEquals(71514.0, track.getTotalDistance(), 100);
     }
 
 }
