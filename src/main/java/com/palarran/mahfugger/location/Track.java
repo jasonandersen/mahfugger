@@ -71,9 +71,9 @@ public class Track implements Locations {
     }
 
     /**
-     * @return the total distance traveled in this track
+     * @return the total distance traveled in this track in meters
      */
-    public long getTotalDistance() {
+    public long getTotalDistanceInMeters() {
         throw new UnsupportedOperationException("not implemented yet");
     }
 
@@ -89,6 +89,27 @@ public class Track implements Locations {
      * @return the minimum velocity between any two sequential track points
      */
     public double getMiniumVelocityInKnots() {
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+
+    /**
+     * @return the maximum velocity between any two sequential track points
+     */
+    public double getMaximumVelocity() {
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+
+    /**
+     * @return the average velocity over the entire track
+     */
+    public double getAverageVelocity() {
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+
+    /**
+     * @return the total distance traveled in this track in nautical miles
+     */
+    public double getTotalDistanceInNauticalMiles() {
         throw new UnsupportedOperationException("not implemented yet");
     }
 

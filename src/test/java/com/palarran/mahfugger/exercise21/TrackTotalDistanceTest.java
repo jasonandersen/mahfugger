@@ -28,8 +28,13 @@ public class TrackTotalDistanceTest {
     }
 
     @Test
-    public void testTotalDistance() {
-        assertEquals(71514.0, track.getTotalDistance(), 100);
+    public void testTotalDistanceMeters() {
+        assertEquals(71514.0, track.getTotalDistanceInMeters(), 100);
+    }
+
+    @Test
+    public void testTotalDistanceNM() {
+        assertEquals(38.614, track.getTotalDistanceInNauticalMiles(), .25);
     }
 
 }

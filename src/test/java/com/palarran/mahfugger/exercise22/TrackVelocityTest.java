@@ -32,4 +32,14 @@ public class TrackVelocityTest {
         assertEquals(0.0, track.getMiniumVelocityInKnots(), 0.1);
     }
 
+    @Test
+    public void testMaxVelocity() {
+        assertEquals(9.445, track.getMaximumVelocity(), 0.1);
+    }
+
+    @Test
+    public void testAvgVelocity() {
+        assertEquals(4.764, track.getAverageVelocity(), 0.1);
+    }
+
 }

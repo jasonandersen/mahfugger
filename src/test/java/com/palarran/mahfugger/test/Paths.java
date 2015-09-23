@@ -12,7 +12,7 @@ public class Paths {
     private final static String PATH_ROOT = "/Users/jason/dev/workspace/mahfugger/";
 
     /**
-     * I mean really - who doesn't?
+     * I mean really - who doesn't? A good read on why monkeys are so darned likeable.
      */
     public final static String I_LIKE_MONKEYS = PATH_ROOT + "src/test/resources/files/i-like-monkeys.txt";
 
