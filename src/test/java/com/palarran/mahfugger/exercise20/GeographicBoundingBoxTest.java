@@ -11,6 +11,7 @@ import com.palarran.mahfugger.location.GeographicBoundingBox;
 import com.palarran.mahfugger.location.Location;
 import com.palarran.mahfugger.location.Track;
 import com.palarran.mahfugger.location.TrackFactory;
+import com.palarran.mahfugger.test.Paths;
 
 /**
  * Test the ability to find the bounding box around a group of locations.
@@ -26,15 +27,13 @@ public class GeographicBoundingBoxTest {
      * FIXME - make this test pass
      */
 
-    private final static String BULL_HARBOR_TO_SEA_OTTER = "/Users/jason/dev/workspace/mahfugger/src/test/resources/files/bull-harbor-to-sea-otter-cove.csv";
-
     private GeographicBoundingBox box;
 
     private Track track;
 
     @Before
     public void setup() throws IOException {
-        track = TrackFactory.loadTrackFromCSVFile(BULL_HARBOR_TO_SEA_OTTER);
+        track = TrackFactory.loadTrackFromCSVFile(Paths.BULL_HARBOR_TO_SEA_OTTER);
         box = track.getBoundingBox();
     }
 
