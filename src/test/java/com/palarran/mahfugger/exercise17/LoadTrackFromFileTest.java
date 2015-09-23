@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import com.palarran.mahfugger.location.Track;
 import com.palarran.mahfugger.location.TrackFactory;
+import com.palarran.mahfugger.test.Paths;
 
 /**
  * Test the ability to load track points from a file.
@@ -18,7 +19,7 @@ public class LoadTrackFromFileTest {
     /* 
      * Now that we understand track points, I want to be able to aggregate all my track points
      * into a single Track object. This single Track object is going to give me information
-     * about my entire track, not just a single point.
+     * about my entire GPS track, not just a single point.
      * 
      * I store all the data points for Tracks in a CSV file. I want to be able to load all of 
      * those track points in the CSV file into a single Track object. This particular track 
@@ -27,21 +28,16 @@ public class LoadTrackFromFileTest {
      * FIXME - make these tests pass
      */
 
-    /*
-     * FIXME - change this file path to your local drive
-     */
-    private final static String BULL_HARBOR_TO_SEA_OTTER = "/Users/jason/dev/workspace/mahfugger/src/test/resources/files/bull-harbor-to-sea-otter-cove.csv";
-
     private Track track;
 
     @Before
     public void setup() throws IOException {
-        track = TrackFactory.loadTrackFromCSVFile(BULL_HARBOR_TO_SEA_OTTER);
+        /*
+         * FIXME - right now these paths are hardcoded to paths on my hard drive. Go into the Paths
+         * class and change the PATH_ROOT constant to the directory that your project is stored in. 
+         */
+        track = TrackFactory.loadTrackFromCSVFile(Paths.BULL_HARBOR_TO_SEA_OTTER);
     }
-
-    /*
-     * FIXME - make these tests pass
-     */
 
     @Test(expected = IllegalArgumentException.class)
     public void testNullPath() throws IOException {

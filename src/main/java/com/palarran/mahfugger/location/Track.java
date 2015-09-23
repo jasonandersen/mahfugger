@@ -3,7 +3,6 @@ package com.palarran.mahfugger.location;
 import java.time.Duration;
 import java.time.ZonedDateTime;
 import java.util.Collection;
-import java.util.List;
 
 /**
  * A GPS track followed by a person or vehicle. A track consists of a series of
@@ -17,7 +16,7 @@ public class Track implements Locations {
      * Constructor
      * @param points
      */
-    public Track(List<TrackPoint> points) {
+    public Track(Collection<TrackPoint> points) {
         throw new UnsupportedOperationException("not implemented yet");
     }
 
@@ -72,9 +71,9 @@ public class Track implements Locations {
     }
 
     /**
-     * @return the total distance traveled in this track
+     * @return the total distance traveled in this track in meters
      */
-    public long getTotalDistance() {
+    public long getTotalDistanceInMeters() {
         throw new UnsupportedOperationException("not implemented yet");
     }
 
@@ -83,6 +82,34 @@ public class Track implements Locations {
      * @see com.palarran.mahfugger.location.Locations#getLocations()
      */
     public Collection<Location> getLocations() {
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+
+    /**
+     * @return the minimum velocity between any two sequential track points
+     */
+    public double getMiniumVelocityInKnots() {
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+
+    /**
+     * @return the maximum velocity between any two sequential track points
+     */
+    public double getMaximumVelocity() {
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+
+    /**
+     * @return the average velocity over the entire track
+     */
+    public double getAverageVelocity() {
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+
+    /**
+     * @return the total distance traveled in this track in nautical miles
+     */
+    public double getTotalDistanceInNauticalMiles() {
         throw new UnsupportedOperationException("not implemented yet");
     }
 

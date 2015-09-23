@@ -10,18 +10,18 @@ import org.junit.Test;
 import com.palarran.mahfugger.location.Track;
 import com.palarran.mahfugger.location.TrackFactory;
 import com.palarran.mahfugger.location.TrackPoint;
+import com.palarran.mahfugger.test.Paths;
 
 /**
  * Test the starting track point and ending track point of a track.
  */
 public class TrackStartTrackPointTest {
-    private final static String BULL_HARBOR_TO_SEA_OTTER = "/Users/jason/dev/workspace/mahfugger/src/test/resources/files/bull-harbor-to-sea-otter-cove.csv";
 
     private Track track;
 
     @Before
     public void setup() throws IOException {
-        track = TrackFactory.loadTrackFromCSVFile(BULL_HARBOR_TO_SEA_OTTER);
+        track = TrackFactory.loadTrackFromCSVFile(Paths.BULL_HARBOR_TO_SEA_OTTER);
     }
 
     /*
