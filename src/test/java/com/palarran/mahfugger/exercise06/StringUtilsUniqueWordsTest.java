@@ -9,6 +9,7 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
+import com.palarran.mahfugger.test.Paths;
 import com.palarran.mahfugger.util.StringUtils;
 
 /**
@@ -18,7 +19,11 @@ public class StringUtilsUniqueWordsTest {
 
     private static final Logger log = Logger.getLogger(StringUtilsUniqueWordsTest.class);
 
-    private static final String PATH = "/Users/jason/dev/workspace/mahfugger/src/test/resources/files/i-like-monkeys.txt";
+    /*
+     * FIXME - right now these paths are hardcoded to paths on my hard drive. Go into the Paths
+     * class and change the PATH_ROOT constant to the directory that your project is stored in. 
+     */
+    private static final String path = Paths.I_LIKE_MONKEYS;
 
     /*
      * FIXME - make these tests pass.
@@ -28,7 +33,7 @@ public class StringUtilsUniqueWordsTest {
 
     @Test
     public void testFile() throws IOException {
-        output = StringUtils.loadFileContents(PATH);
+        output = StringUtils.loadFileContents(path);
         log.debug(output);
         //make sure the file was loaded
         assertEquals(2618, output.length());
@@ -57,7 +62,7 @@ public class StringUtilsUniqueWordsTest {
 
     @Test
     public void testLoadWordCount() {
-        Map<String, Integer> wordCount = StringUtils.countWordsInFile(PATH);
+        Map<String, Integer> wordCount = StringUtils.countWordsInFile(path);
         assertEquals(new Integer(13), wordCount.get("monkeys"));
         assertEquals(new Integer(2), wordCount.get("freezer"));
     }

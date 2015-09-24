@@ -6,32 +6,35 @@ package com.palarran.mahfugger.location;
  */
 public class InvalidCoordinatesException extends RuntimeException {
 
-    private final Float latitude;
+    private final Double latitude;
 
-    private final Float longitude;
+    private final Double longitude;
 
     /**
      * Constructor.
      * @param latitude
      * @param longitude
      */
-    public InvalidCoordinatesException(Float latitude, Float longitude, String message) {
-        super(message);
+    public InvalidCoordinatesException(Double latitude, Double longitude, String message) {
+        super(message); //<-- What does this mean?
         this.latitude = latitude;
         this.longitude = longitude;
+        /*
+         * Why isn't the message argument being stored in this class?
+         */
     }
 
     /**
      * @return the latitude
      */
-    public Float getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
     /**
      * @return the longitude
      */
-    public Float getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
