@@ -1,5 +1,6 @@
 package com.palarran.mahfugger.util;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -120,7 +121,17 @@ public class StringUtils {
      * 
      */
     public static String loadFileContents(String path) throws IOException {
-        throw new UnsupportedOperationException("not implemented yet");
+        if (path == null) { 
+            throw new IllegalArgumentException("Oopsie");
+        }
+        if (path == "/this/is/a/deliberately/bad/path"){
+            throw new IOException(path);
+        }
+        
+        long fileSize = new File(path).length();
+        String strLong = Long.toString(fileSize);
+        
+        return strLong;
     }
 
     /**

@@ -9,7 +9,7 @@ public class Paths {
      * FIXME - change this path to your root path to the mahfugger project. When you do, make
      * sure PATH_ROOT ends in "mahfugger/" (note the trailing slash).
      */
-    private final static String PATH_ROOT = "/Users/cb/workspace/mahfugger/";
+    private final static String PATH_ROOT = "/Users/CB/git/mahfugger/";
 
     /**
      * I mean really - who doesn't? A good read on why monkeys are so darned likeable.
