@@ -1,14 +1,16 @@
 package com.palarran.mahfugger.util;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.log4j.Logger;
 
 /**
@@ -52,8 +54,7 @@ public class StringUtils {
         for (int i = input - 1; i >= 0; i--) {
             expectedOutput = expectedOutput + flipIt.charAt(i);
         }
-        log.info("Output of flipIt after loop = " + flipIt);
-        log.info("Length of input is: " + input);
+
         actualOutput = expectedOutput;
 
         return actualOutput;
@@ -121,17 +122,16 @@ public class StringUtils {
      * 
      */
     public static String loadFileContents(String path) throws IOException {
-        if (path == null) { 
+        if (path == null) {
             throw new IllegalArgumentException("Oopsie");
         }
-        if (path == "/this/is/a/deliberately/bad/path"){
+        if (path == "/this/is/a/deliberately/bad/path") {
             throw new IOException(path);
         }
-        
-        long fileSize = new File(path).length();
-        String strLong = Long.toString(fileSize);
-        
-        return strLong;
+
+        byte[] txtFileSize = Files.readAllBytes(Paths.get(path));
+
+        return new String(txtFileSize, StandardCharsets.UTF_8);
     }
 
     /**
@@ -141,7 +141,29 @@ public class StringUtils {
      *      word appears in the file
      */
     public static Map<String, Integer> countWordsInFile(String path) {
-        throw new IllegalArgumentException("not implemented yet");
+
+        List<String> wordsFromText = null;
+        try {
+            wordsFromText = Files.readAllLines(Paths.get(path));
+
+            ArrayList<String> justWords = new ArrayList<String>(Arrays.asList(wordsFromText.split("\\W")));
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
+
+        Map<String, Integer> wordMap = new HashMap<String, java.lang.Integer>();
+
+        for (String word : wordsFromText) {
+            int count = 0;
+            if (wordMap.containsKey(word)) {
+                count = wordMap.get(word);
+            }
+            wordMap.put(word, ++count);
+            log.info("Output: " + wordMap);
+        }
+        return wordMap;
+
     }
 
 }
