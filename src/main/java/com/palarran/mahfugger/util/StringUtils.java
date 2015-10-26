@@ -139,31 +139,34 @@ public class StringUtils {
      * @return a map containing word counts within the file. The String key in the returned
      *      map is the word and the Integer value in the map is the number of times that
      *      word appears in the file
+     * @throws IOException 
      */
+
     public static Map<String, Integer> countWordsInFile(String path) {
 
-        List<String> wordsFromText = null;
-        try {
-            wordsFromText = Files.readAllLines(Paths.get(path));
+        List<String> readFromMonkeyText = null;
 
-            ArrayList<String> justWords = new ArrayList<String>(Arrays.asList(wordsFromText.split("\\W")));
+        try {
+            readFromMonkeyText = Files.readAllLines(Paths.get(path));
+
         } catch (IOException e) {
 
             e.printStackTrace();
         }
 
+        List<String> wordsFromMonkeyText = new ArrayList<String>(readFromMonkeyText);
+
         Map<String, Integer> wordMap = new HashMap<String, java.lang.Integer>();
 
-        for (String word : wordsFromText) {
-            int count = 0;
-            if (wordMap.containsKey(word)) {
-                count = wordMap.get(word);
+        for (String theWords : wordsFromMonkeyText) {
+            int wordCounter = 0;
+            if (wordMap.containsKey(theWords)) {
+                wordCounter = wordMap.get(theWords);
             }
-            wordMap.put(word, ++count);
+            wordMap.put(theWords, ++wordCounter);
             log.info("Output: " + wordMap);
         }
         return wordMap;
-
     }
 
 }
